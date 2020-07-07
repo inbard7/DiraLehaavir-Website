@@ -1,0 +1,385 @@
+﻿@font-face {
+    font-family: 'Arimo-Regular';
+    src: url('../Fonts/Arimo-Regular.ttf') format('truetype'), url('../Fonts/Arimo-Regular.eot') format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'trashimclm-bold-webfont';
+    src: url('../Fonts/trashimclm-bold-webfont.ttf') format('truetype');
+    /*eot file convertion corrupted file but it should have been here as well*/
+}
+
+body {
+    direction: rtl;
+}
+header {
+    background-color: white;
+    width: 100%;
+    height: 50px;
+    font-size: 150%;
+    z-index: 0;
+    padding: 5px;
+}
+
+    header a img {
+        width: 100px;
+        height: auto;
+    }
+
+
+        header a img:hover {
+            transform: scale(1.1);
+        }
+
+    header h1 {
+        font-family: trashimclm-bold-webfont;
+        font-size: 115%;
+        color: #4A321B;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+        header h1 span {
+            font-family: Arimo;
+            font-size: 70%;
+            color: #4A321B
+        }
+
+
+/* תחילת תפריט המבורגר*/
+#hamburgermenu {
+    display: block;
+    position: relative;
+    top: 20px;
+    left: 30px;
+    z-index: 1;
+}
+
+    #hamburgermenu a {
+        text-decoration: none;
+        color: #4A321B;
+        font-family: Arimo-Regular;
+        transition: color 0.3s ease;
+    }
+
+        #hamburgermenu a:hover {
+            color: #82C45A;
+        }
+
+
+    #hamburgermenu input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+    }
+    /*הספאנים הם הפסים של ההמוברגר עצמו*/
+    #hamburgermenu span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #4A321B;
+        border-radius: 4px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
+    }
+
+        #hamburgermenu span:first-child {
+            transform-origin: 0% 0%;
+        }
+
+        #hamburgermenu span:nth-last-child(2) {
+            transform-origin: 0% 100%;
+        }
+
+    #hamburgermenu input:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: #4A321B;
+    }
+
+        #hamburgermenu input:checked ~ span:nth-last-child(3) {
+            opacity: 0;
+            transform: rotate(0deg) scale(0.2, 0.2);
+        }
+
+
+        #hamburgermenu input:checked ~ span:nth-last-child(2) {
+            transform: rotate(-45deg) translate(0, -1px);
+        }
+
+/*הרקע הירוק של התפריט*/
+#menu {
+    display: none;
+    position: absolute;
+    left: 1px;
+    width: 210px;
+    margin: -150px 0 0 -50px;
+    padding: 15px;
+    padding-top: 102px;
+    background: #e4f2db;
+    border: solid 2px #4A321B;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /*על דיספליי נונ לא רואים אותו ובלי הדיספליי נונ התפריט מוצג בצד הדף 
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);*/
+}
+
+    #menu li {
+        padding: 5px 0;
+        font-size: 22px;
+    }
+
+#hamburgermenu input:checked ~ ul {
+    display: block;
+}
+
+
+/*סוף תפריט המבורגר*/
+#main-container {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.sub-container {
+    background-color: #E4F2DB;
+    text-align: center;
+}
+
+.sub-container1 {
+    background-image: url('../images/homepage banner.png');
+    background-repeat: no-repeat;
+    background-size: 1280px 350px;
+    background-position: center;
+    background-color: #616061;
+    text-align: center;
+    width: 100%;
+    height: 350px;
+    justify-content: center;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+#title {
+    font-family: trashimclm-bold-webfont;
+    font-size: 60px;
+    color: white;
+    margin: -10px 0 0 0;
+}
+
+#sub-title {
+    font-family: Arimo-Regular;
+    font-size: 28px;
+    color: white;
+    margin: 0 0 10px 0;
+}
+
+#subsub-title {
+    font-family: Arimo-Regular;
+    font-size: 20px;
+    color: white;
+    margin-top: 30px;
+}
+
+/*נגישות*/
+#Accessibility {
+    position: fixed;
+    background-color: #82C45A;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #4A321B;
+    border-radius: 7px;
+    top: 220px;
+}
+
+    #Accessibility a img {
+        width: 35px;
+        height: auto;
+        padding: 2px;
+    }
+
+/*סוף נגישות*/
+
+#container {
+    background-color: #616061;
+    color: white;
+    width: 100%;
+}
+
+input[type="text"], textarea, select {
+    background-color: #494A48;
+}
+
+#contact-form {
+    flex-flow: column wrap;
+    align-content: center;
+}
+#sendbutton {
+    color: #343432;
+    background: #82C45A;
+    border-style: outset;
+    border-color: white;
+    height: 40px;
+    width: 160px;
+    font: 18px;
+    text-shadow: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+#sendbutton:hover {
+        background: #BBDFA5;
+    }
+
+.form-label {
+    margin-top:15px;
+    display: block;
+}
+
+.form-control{
+display: flex;
+/*flex - to enable certain flow of page*/
+flex-flow: column nowrap;
+/*no wrap = don't go down a row if container is smaller*/
+align-content: flex-start;
+/* flex-start = */
+width: 320px;
+margin-bottom: 20px;
+font-family:Arimo-Regular;
+color:white;
+}
+
+.form-control input, textarea, select {
+  border:none;  
+}
+
+div input[type=radio] {
+    display:inline-block;
+}
+
+#gendertitle {
+    display:block;
+}
+
+.mbt20 {
+    margin-bottom: 20px;
+}
+
+#bottomsquare {
+    background-color: #82C45A;
+    color: #343432;
+    margin-top: 20px;
+    text-align: center;
+    font-family:Arimo-Regular;
+}
+
+
+h5 {
+    padding-top:20px;
+    font-size: 20px;
+    margin:4px;
+}
+
+h6 {
+    font-size: 17px;
+    margin:0 0 20px 0;
+}
+
+.mail {
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: space-between;
+    width: 100%;
+    font-size:25px;
+    margin:5px;
+}
+
+
+footer {
+    width: 100%;
+    height: 20%;
+    background-color: #616061;
+    color: #E4F2DB;
+    font-size: 120%;
+    padding: 5px;
+    text-align: center;
+}
+
+    footer a:link {
+        color: #E4F2DB;
+        text-decoration: none;
+    }
+
+    footer a:visited {
+        color: #BBDFA5;
+    }
+
+    footer a:hover {
+        color: white;
+    }
+
+    footer a {
+        margin-left: 35px;
+    }
+
+
+    .notallowed {
+        cursor:not-allowed;
+    }
+/* color pallete: 
+    light background green: #E4F2DB
+    green shades: from bright to dark:#BBDFA5 #82C45A #6DB441 #528731 #0E8C45
+    grey:#464644 darker grey: #343432
+*/
+/*פירורי לחם*/
+#Pirurim {
+   
+    position: absolute;
+    /* bottom: -99px; */
+    top: 342px;
+    left: 1107px;
+    list-style: none;
+    font-size: 14px;
+}
+
+    #Pirurim ol a {
+        
+        color: azure;
+    }
+
+    #Pirurim ol li {
+        display: inline-block;
+        /*margin: 15px auto;*/
+    }
+
+        #Pirurim ol li:after {
+            content: ">";
+            color: azure;
+        }
+
+        #Pirurim ol li:last-child::after {
+            content: "";
+        }
+
+        #Pirurim ol li a:hover {
+            
+            font-weight: bold;
+        }
+/*סוף פירורי לחם*/

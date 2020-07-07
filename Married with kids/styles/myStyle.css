@@ -1,0 +1,973 @@
+﻿@font-face {
+    font-family: 'Arimo-Regular';
+    src: url('../Fonts/Arimo-Regular.eot') format('embedded-opentype'), url('../Fonts/Arimo-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'trashimclm-bold-webfont';
+    src: url('../Fonts/trashimclm-bold-webfont.ttf') format('truetype');
+}
+
+body {
+    direction: rtl;
+}
+
+.m-bt {
+    margin-bottom:15px;
+}
+
+.m-top15 {
+    margin-top:15px;
+}
+
+.bold {
+    font-weight:bold;
+}
+
+.align-items-center {
+    align-items:center;
+}
+
+header {
+    background-color: white;
+    width: 100%;
+    height: 50px;
+    font-size: 150%;
+    z-index: 0;
+    padding: 5px;
+}
+
+header a img {
+    width:100px;
+    height:auto;
+}
+
+
+    header a img:hover {
+     transform: scale(1.1);
+    }
+
+    header h1 {
+        font-family: trashimclm-bold-webfont;
+        font-size: 115%;
+        color: #4A321B;
+        justify-content:center;
+        align-items:center;
+        margin:0 auto;
+    }
+
+    header h1 span {
+            font-family: Arimo;
+            font-size: 70%;
+            color: #4A321B
+    }
+
+
+/* תחילת תפריט המבורגר*/
+#hamburgermenu {
+    display: block;
+    position: relative;
+    top: 20px;
+    left: 30px;
+    z-index: 1;
+}
+
+    #hamburgermenu a {
+        text-decoration: none;
+        color: #4A321B;
+        font-family: Arimo-Regular;
+        transition: color 0.3s ease;
+    }
+
+        #hamburgermenu a:hover {
+            color: #82C45A;
+        }
+
+
+    #hamburgermenu input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+    }
+    /*הספאנים הם הפסים של ההמוברגר עצמו*/
+    #hamburgermenu span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #4A321B;
+        border-radius: 4px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
+    }
+
+        #hamburgermenu span:first-child {
+            transform-origin: 0% 0%;
+        }
+
+        #hamburgermenu span:nth-last-child(2) {
+            transform-origin: 0% 100%;
+        }
+
+    #hamburgermenu input:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: #4A321B;
+    }
+
+        #hamburgermenu input:checked ~ span:nth-last-child(3) {
+            opacity: 0;
+            transform: rotate(0deg) scale(0.2, 0.2);
+        }
+
+
+        #hamburgermenu input:checked ~ span:nth-last-child(2) {
+            transform: rotate(-45deg) translate(0, -1px);
+        }
+
+/*הרקע הירוק של התפריט*/
+#menu {
+    display: none;
+    position: absolute;
+    left: 1px;
+    width: 210px;
+    margin: -150px 0 0 -50px;
+    padding: 15px;
+    padding-top: 102px;
+    background: #e4f2db;
+    border: solid 2px #4A321B;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /*על דיספליי נונ לא רואים אותו ובלי הדיספליי נונ התפריט מוצג בצד הדף 
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);*/
+}
+
+    #menu li {
+        padding: 5px 0;
+        font-size: 22px;
+    }
+
+#hamburgermenu input:checked ~ ul {
+    display: block;
+}
+
+
+/*סוף תפריט המבורגר*/
+
+/*תפריט צד*/
+
+#sidebar {
+    background-color: #e4f2db;
+    width: 105px;
+    height: 285px;
+    border: 2px solid #4A321B;
+    border-radius: 7px;
+    position: fixed;
+    top: 120px;
+    right: 5px;
+}
+
+.flex-wrap-nowrap{
+    flex-wrap: nowrap;
+}
+
+#sidebar nav {
+    width:100%;
+    height:100%;
+}
+
+    #sidebar div div .main-link {
+        display: flex;
+        background-color: #CDA176;
+        color: black;
+        font-family: trashimclm-bold-webfont;
+        width: 90px;
+        min-width:90px;
+        height: 50px;
+        padding-top: 5px;
+        text-decoration: none;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        margin-top: 12px;
+        margin-right: 7px;
+        box-shadow: 4px 6px 5px 0px rgba(74,50,28,1);
+    }
+
+        #sidebar div div a:hover {
+            transform: scale(1.08,1.08)
+        }
+.main-link:hover ~ .sub-menu{
+    display:flex;
+}
+
+.sub-menu {
+  display:none;
+  margin-right:5px;
+  justify-content:space-around;
+  margin-top:10px;
+  background-color: #e4f2db;
+  border: 2px solid #4A321B;
+  border-right:none;
+  border-radius: 7px;
+  width:120px;
+  height:53px;
+  align-items:center;
+}
+
+.sub-menu:hover {
+    display:flex;
+}
+    .sub-menu a {
+        display: flex;
+        background-color: #CDA176;
+        color: black;
+        font-family: trashimclm-bold-webfont;
+        width: 105px;
+        height: 20px;
+        text-decoration: none;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        box-shadow: 4px 3.5px 5px 0px rgba(74,50,28,1);
+    }
+
+        .sub-menu a:link {
+            color: black;
+        }
+        .sub-menu a:hover {
+            transform: scale(1.08,1.08)
+        }
+        .sub-menu a:link {
+            color: black;
+        }
+
+        #Accessibility {
+            position: fixed;
+            background-color: #e4f2db;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #4A321B;
+            border-radius: 7px;
+            top: 500px;
+        }
+
+    #Accessibility a img {
+        width: 35px;
+        height: auto;
+        padding: 2px;
+    }
+/*סוף תפריט צד*/
+
+/*פירורי לחם*/
+#breakcrumbs {
+    padding-right: 115px;
+    font-family: Arimo-Regular;
+    background-color: #E4F2DB;
+}
+    #breakcrumbs ol {
+        margin:0;
+    }
+#breakcrumbs ol li {
+    display:inline-block;
+}
+
+#breakcrumbs ol li:after {
+    content:">";
+}
+    #breakcrumbs ol li:last-child::after {
+        content: "";
+    }
+
+    #breakcrumbs ol li a:link {
+        color: #4A321B;
+    }
+    #breakcrumbs ol li a:visited {
+        color: #4A321B;
+    }
+    #breakcrumbs ol li a:hover {
+        font-weight:bold;
+    }
+/*סוף פירורי לחם*/
+
+#main-container {
+    display:flex;
+    flex-flow:column nowrap;
+}
+
+.sub-container {
+    background-color: #E4F2DB;
+    text-align: center;
+}
+
+.sub-container1 {
+    background-image: url('../images/married with kids banner.jpg');
+    background-repeat: no-repeat;
+    background-size: 1280px 350px;
+    background-position: center;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.d-flex{
+    display:flex;
+}
+
+.flex-col{
+    flex-direction: column;
+}
+
+#title {
+    font-family:trashimclm-bold-webfont;
+    font-size:60px;
+    color:white;
+    margin:-10px 0 0 0;
+}
+
+#sub-title {
+    font-family:Arimo-Regular;
+    font-size:28px;
+    color:white;
+    margin:0 0 10px 0;
+}
+
+#subsub-title {
+    font-family:Arimo-Regular;
+    font-size:20px;
+    color:white;
+    margin-top:30px;
+}
+
+.notallowed {
+    cursor:not-allowed;
+}
+
+
+.sub-container1 {
+    background-image: url('../images/married with kids banner.jpg');
+    background-repeat: no-repeat;
+    background-size: 1280px 350px;
+    background-position: center;
+    background-color: #6E6E70;
+    text-align: center;
+    width: 100%;
+    height: 350px;
+    justify-content: center;
+}
+
+#students {
+    background-color: #E4F2DB;
+    color: #4A321B;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin-right:7%;
+}
+
+#studentimage {
+    justify-content: center;
+    background-color: #E4F2DB;
+    width: 30%;
+    align-items: center;
+}
+
+#studentimage img {
+    width:60%;
+    height:auto;
+    margin-right:130px;
+}
+
+h4 {
+    font-family:trashimclm-bold-webfont;
+    font-size:200%;
+}
+
+
+#studentsubtitle p {
+    font-family: Arimo-Regular;
+    font-size: 130%;
+    width: 80%;
+    margin:0 auto;
+
+}
+
+.studentTitle {
+    font-size: 120%;
+    font-family:Arimo-Regular;
+    font-weight:bold;
+}
+
+.underline {
+    text-decoration:underline;
+}
+
+.righttext {
+    text-align:right;
+}
+
+.no-margin {
+    margin:0;
+}
+
+/*תחילת סקשנים של מעבר*/
+.full {
+    width: auto;
+    justify-content: center;
+    font-size: 130%;
+}
+
+    .full div, ul {
+        width: 80%;
+        margin-left: 20px;
+    }
+
+        .full div p {
+            width: 90%;
+        }
+
+.sectiontitle {
+    margin-right: 135px;
+    background-color: #CDA176;
+    width: 80%;
+    height: 100%;
+    color: black;
+    box-shadow: 4px 6px 5px 0px rgba(74,50,28,1);
+}
+
+    .sectiontitle h5, h6, h7, h8, h9 {
+        font-family: trashimclm-bold-webfont;
+        font-size: 210%;
+        padding: 5px;
+        margin: 0 auto;
+    }
+
+.age-title {
+    margin-right: 135px;
+    background-color: #CDA176;
+    width: 80%;
+    height: 100%;
+    color: black;
+    font-family:Arimo-Regular;
+    font-size:140%;
+    padding-right:30px;
+    font-weight:bold;
+}
+
+.section-text {
+    align-items: center;
+    justify-content: center;
+    font-family: Arimo-Regular;
+}
+/*אריזה*/
+
+#packing {
+    width: 100%;
+    align-content:center;
+}
+
+#pack6-12, #pack13-18, #transition6-12, #transition13-18, #unpacking6-12 #unpacking13-18 {
+    width: 100%;
+    align-content: center;
+}
+    #pack6-12 p, ol, #transition6-12 p, ol, #transition13-18 p, ol, #unpacking6-12 p, ol, #unpacking13-18 p, ol {
+        padding-right: 145px;
+    }
+
+#pack13-18 {
+    background-color: #E4F2DB;
+}
+#pack13-18 p, ol {
+    padding-right: 145px;
+}
+.packing {
+    width: 50%;
+    justify-content: center;
+    height: 200px;
+    font-size: 125%;
+}
+.square-list {
+    padding-right: 170px;
+    list-style:square;
+}
+
+.age-subtitle {
+    font-weight:bold;
+    font-size:120%;
+}
+.box-list {
+    margin-right: 80px;
+    list-style-image: url('../images/boxlist.png');
+}
+
+.box-list li {
+    margin-right:70px;
+}
+
+#boxlist-background {
+    background-color: #E4F2DB;
+    padding:20px;
+}
+
+#pack-right1 {
+    background-color: #6E6E70;
+    color: white;
+    padding: 40px 135px 40px 40px;
+    align-items: center;
+}
+
+#pack-left1 img {
+    display:flex;
+    width:auto;
+    height:inherit;
+    padding:5px;
+}
+
+#pack-full {
+    background-color: #E4F2DB;
+    color: #4A321B;
+    padding: 40px 135px 40px 40px;
+    align-items: center;
+}
+
+#pack-right2 {
+    font-family:trashimclm-bold-webfont;
+    background-color: #6E6E70;
+    color: white;
+    padding: 40px 135px 40px 40px;
+    align-items: center;
+    font-size:170%;
+}
+#pack-right2 img {
+    display: flex;
+    width: auto;
+    height: inherit;
+    padding: 5px;
+}
+
+#pack-right3 {
+    font-family: trashimclm-bold-webfont;
+    background-color: white;
+    color: #4A321B;
+    padding: 40px 135px 40px 40px;
+    align-items: center;
+    font-size: 230%;}
+
+    #pack-right3 img {
+        display: flex;
+        width: auto;
+        height: inherit;
+        padding: 5px;
+    }
+
+#pack-right4 {
+    font-family: trashimclm-bold-webfont;
+    background-color: white;
+    color: #4A321B;
+    padding: 30px 200px 40px 40px;
+    align-items: center;
+    font-size:220%;
+}
+
+#pack-left2 {
+    background-color: #6E6E70;
+    color: white;
+    padding: 40px 135px 40px 40px;
+    align-items: center;
+    font-size:110%;
+}
+
+#pack-left2 table th, td{
+    border:1px solid white;
+    padding:5px;
+}
+
+    #pack-left2 table th {
+        background-color: white;
+        color: #6E6E70;
+        border:1px solid #6E6E70;
+    }
+
+#pack-left3 {
+    background-color: #4A321B;
+    margin-left: 40px;
+    align-items: center;
+    padding: 20px;
+    height: auto;
+}
+
+#pack-left4 {
+    background-color: #6E6E70;
+    color: white;
+    padding: 40px 80px 40px 40px;
+    align-items: center;
+    height:auto;
+}
+
+#pack-full2 {
+    background-color: #6E6E70;
+    color: white;
+    padding: 40px 135px 40px 40px;
+    align-items: center;
+}
+
+#pack-full2 div span {
+    font-size:80%;
+}
+
+
+#pack-full3 {
+    background-color: #E4F2DB;
+    color: #4A321B;
+    padding: 40px 135px 40px 40px;
+    align-items: center;
+}
+
+#materials {
+    text-align:center;
+    border:hidden;
+    margin-right:15%;
+}
+
+#materials tr, td {
+    border:hidden;
+    padding:20px;
+}
+
+#materials tr td img {
+width:120px;
+height:auto;
+}
+
+#pack-full4 {
+    background-color: white;
+    color: #4A321B;
+    padding: 30px 135px 30px 30px;
+    align-items: center;
+    height:auto;
+    font-size:110%;
+}
+
+#pack-full4 ul li{
+margin-top:10px;
+}
+
+#pack-full5 {
+    background-color: #6E6E70;
+    color: white;
+    padding: 30px 135px 30px 30px;
+    align-items: center;
+    height: auto;
+    font-size: 110%;
+}
+
+    #pack-full5 ul li {
+        margin-top: 10px;
+
+    }
+
+    /*סוף אריזה תחילת שינוע*/
+
+#transition {   
+    width: 100%;
+    align-content: center;
+}
+
+#transition1-full {
+    background-color: #E4F2DB;
+    color: #4A321B;
+    padding: 30px 135px 30px 30px;
+    align-items: center;
+    height: auto;
+    font-size: 110%;
+}
+
+#transition1-full div ul li {
+    margin-top:8px;
+}
+
+#transition2-full {
+    background-color: #6E6E70;
+    color: white;
+    padding: 30px 135px 30px 30px;
+    height: auto;
+    font-size: 110%;
+}
+
+#transition2-full p {
+margin-left:20px;
+width:70%;
+}
+
+#transition-right {
+    background-color: white;
+    color: #4A321B;
+    padding: 40px 135px 40px 40px;
+    align-items: center;
+    width: 50%;
+    height: inherit;
+    font-size:120%;
+    font-weight:600;
+}
+
+#transition-left {
+    background-color: white;
+    padding: 5px;
+    width: 50%;
+    justify-content: center;
+    padding: 60px;
+}
+
+#transition-left div img {
+    width:77%;
+    height:auto;
+}
+
+
+#unpacking {
+    width: 100%;
+    align-content: center;
+}
+
+#unpacking-full {
+    background-color: #E4F2DB;
+    color: #4A321B;
+    padding: 30px 135px 30px 30px;
+    align-items: center;
+    height: auto;
+    font-size: 110%;
+}
+
+#unpacking-full ul li {
+    margin-top:8px;
+}
+
+#unpackingkids {
+    display:flex;
+    background-color:white;
+    width:50%;
+    border-radius:10px;
+    margin-top:50px;
+    margin:0 auto;
+}
+
+#accessory {
+    width: 100%;
+    align-content: center;
+}
+
+#accessory-full {
+    background-color: #6E6E70;
+    color: white;
+    padding: 30px 135px 30px 30px;
+    align-items: center;
+    height: auto;
+    font-size: 110%;
+}
+
+#accessory-right {
+    font-family: trashimclm-bold-webfont;
+    background-color: white;
+    color: #4A321B;
+    padding: 40px 135px 40px 40px;
+    align-items: center;
+    text-align:center;
+    font-size: 210%;
+    width:50%;
+}
+
+
+#accessory-left {
+    background-color: #4A321B;
+    align-items: center;
+    padding: 20px;
+    width:50%;
+    height: auto;
+}
+
+    #accessory-left img {
+        display: flex;
+        width: 240px;
+        height: inherit;
+        padding: 20px;
+    }
+
+
+#accessory2-full {
+    background-color: #4A321B;
+    color: white;
+    padding: 30px 135px 30px 30px;
+    align-items: center;
+    height: auto;
+    font-size: 110%;
+}
+    #accessory2-full p a {
+        color: #E4F2DB;
+    }
+        #accessory2-full p a:visited {
+            color: #E4F2DB;
+        }
+        #accessory2-full p a:hover {
+            color: white;
+        }
+
+#accessory2-full div div p {
+    background-color: #4A321B;
+    color: white;
+    padding: 30px 135px 30px 30px;
+    align-items: center;
+    height: auto;
+    font-size: 160%;
+}
+#workimage {
+   justify-content: center;
+   width: 80%;
+   align-items: center;
+}
+
+    #workimage img {
+        width: 50%;
+        height: auto;
+    }
+
+#benosaf {
+    color: #4A321B;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin-right:150px;
+}
+
+#kle-irgon {
+    font-family: trashimclm-bold-webfont;
+    font-size: 220%;
+    width: 80%;
+    justify-content:center;
+}
+
+#organizesubtitle p {
+    font-family: Arimo-Regular;
+    font-size: 150%;
+    width: 100%;
+    margin:0 0 45px 0;
+    font-weight:bold;
+}
+
+.organizeicons {
+    margin-top:50px;
+}
+
+.organizeicons img {
+    width: 50%;
+    height: auto;
+}
+
+.organizeicons a:link {
+    color: #4A321B;
+}
+    .organizeicons a:hover {
+        transform: scale(1.1);
+        color: #4A321B;
+    }
+
+    .organizeicons:hover {
+        transform: scale(1.1);
+    }
+
+.organizeicons a:visited {
+    color: #4A321B;
+}
+
+.organizeicons a {
+    color: #4A321B;
+    text-decoration:none;
+}
+
+#underline {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+
+#underline1 {
+    width:60%;
+    height:auto;
+    margin: 0 auto;
+}
+
+
+#calendar, #check, #pets {
+        font-family:Arimo-Regular;
+        font-weight:bold;
+        font-size:180%;
+    }
+
+    #calendar {
+        width:15px;
+    }
+
+#calendar {
+     cursor:not-allowed
+}
+
+#checklink :link {
+    color: #4A321B;
+}
+#checklink :hover {
+    color: none;
+}
+#checklink :visited {
+    color: #4A321B;
+}
+
+#petink :link {
+    color: #4A321B;
+}
+
+#petink :hover {
+    color: none;
+}
+
+#petink :visited {
+    color: #4A321B;
+}
+
+    footer {
+        width: 100%;
+        height: 20%;
+        background-color: #616061;
+        color: #E4F2DB;
+        font-size: 120%;
+        padding: 5px;
+        text-align: center;
+    }
+
+    footer a:link {
+        color: #E4F2DB;
+        text-decoration:none;
+    }
+
+    footer a:visited {
+        color: #BBDFA5;
+    }
+
+    footer a:hover {
+        color:white;
+    }
+
+    footer a {
+        margin-left:35px;
+    }

@@ -1,0 +1,331 @@
+﻿@font-face {
+    font-family: 'Arimo-Regular';
+    src: url('../Fonts/Arimo-Regular.eot') format('embedded-opentype'), url('../Fonts/Arimo-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'trashimclm-bold-webfont';
+    src: url('../Fonts/trashimclm-bold-webfont.ttf') format('truetype');
+}
+
+body {
+    direction: rtl;
+    width: 1280px;
+    background-color: #e2efd9;
+}
+
+#TopWab {
+    /*position: relative;*/
+    position: absolute;
+    bottom: 205px;
+    /* right: 41px; */
+    width: 1270px;
+}
+
+header {
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    height: 31px;   
+    font-size: 150%;
+    z-index: 0;
+    padding: 5px;
+}
+    header a img {
+        width: 100px;
+        height: auto;
+        position: relative;
+        left: 550px;
+    }
+
+
+        header a img:hover {
+            transform: scale(1.1);
+        }
+
+
+        header h1 span {
+            font-family: Arimo;
+            font-size: 70%;
+            color: #4A321B
+        }
+
+
+
+#TopWab {
+    /*position: relative;*/
+    position: absolute;
+    bottom: 205px;
+    /* right: 41px; */
+    width: 1270px;
+}
+#Baner {
+    background-image: url('../images/homepage banner.png');
+  
+    background-repeat: no-repeat;
+    background-size: 1280px 350px;
+    background-position: center;
+    background-color: #616061;
+    text-align: center;
+    width: 100%;
+    height: 350px;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Trashim CLM';
+    /*justify-content: center;
+    align-items: center;*/
+    color: azure;
+    font-size: 60px;
+    position: relative;
+    /*right: 540px;*/
+    top: 160px;
+}
+/*פירורי לחם*/ 
+/*#Pirurim ol {
+    font-family: Arimo;
+    position: relative;
+    
+    top: 247px;
+    left: 559px;
+    list-style: none;
+    font-size: 14px;
+    color: #4A321B;
+}
+
+    #Pirurim ol a {
+        
+        color:azure;
+    }
+
+    #Pirurim ol li {
+        display: inline-block;
+        
+    }
+
+        #Pirurim ol li:after {
+            content: ">" ;
+            color:azure;
+        }
+
+        #Pirurim ol li:last-child::after {
+            content: "";
+        }*/
+
+#Pirurim {
+    
+    font-family: Arimo-Regular;
+    background-color: #E4F2DB;
+    position: relative;
+    top: 270px;
+    left: 559px;
+}
+
+#Pirurim ol {
+    margin: 0;
+}
+
+    #Pirurim ol li {
+        display: inline-block;
+    }
+
+        #Pirurim ol li:after {
+            content: ">";
+        }
+
+        #Pirurim ol li:last-child::after {
+            content: "";
+        }
+
+        #Pirurim ol li a:link {
+            color: #4A321B;
+        }
+
+        #Pirurim ol li a:visited {
+            color: #4A321B;
+        }
+
+        #Pirurim ol li a:hover {
+            font-weight: bold;
+        }
+
+        /*סוף פירורי לחם*/
+
+#WebMap a {
+    font-size: small;
+    color: black;
+    direction: inherit;
+    font-family: Arimo;
+}
+ul , a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration:double;
+}
+
+#Studendts {
+    /*background-color: lightgray;*/
+    width: 150px;
+    height: 284px;
+    display: inline-block;
+    right: 155px;
+    /* top: 300px; */
+    position: absolute;
+}
+#Old {
+    /*background-color: blanchedalmond;*/
+    width: 150px;
+    height: 284px;
+    display: inline-block;
+    right: 310px;
+    /* top: 300px; */
+    position: absolute;
+}
+#Family {
+    /*background-color: lightgray;*/
+    width: 150px;
+    display: inline-block;
+    right: 466px;
+    /* top: 300px; */
+    position: absolute;
+}
+#Divorce {
+    /*background-color: blanchedalmond;*/
+    width: 150px;
+    display: inline-block;
+    right: 622px;
+    /* top: 300px; */
+    position: absolute;
+}
+#Animals {
+    /*background-color: blanchedalmond;*/
+    width: 150px;
+    display: inline-block;
+    right: 155px;
+    top: 630px;
+    position: absolute;
+}
+#Tools {
+    /*background-color: lightgray;*/
+    width: 150px;
+    height: 93px;
+    display: inline-block;
+    right: 310px;
+    top:630px;
+    position: absolute;
+}
+.TopList {
+    background-color: white;
+    text-decoration: none;
+    text-align :center;
+}
+/*.TopList {
+    text-decoration:white;
+    text-indent: 5px;
+    color: black;
+    list-style-type: disc;
+    padding: 3px;
+}*/
+.LineMapLvele1 {
+    text-decoration: underline;
+    text-indent: 5px;
+    color: white;
+    /*list-style-type:disc;*/
+    padding: 3px;
+    
+}
+ .LineMapLvele1:hover {
+        font-weight: bold;
+    }
+
+
+.LineMapLvele2 {
+    text-indent: 19px;
+    
+    list-style-type: circle;
+    padding: 3px;
+    color: black;
+}
+.LineMapLvele2:hover{
+    font-weight:bold;
+    color:blue;
+}
+.TopList:hover{
+font-weight:bold;
+color:palevioletred;
+}
+  #Divorce .LineMapLvele2:hover {
+  color:dimgrey;
+    }
+
+#Divorce #Divorce:hover {
+    color: dimgrey;
+}
+
+.notActive ul a {
+    text-decoration: none;
+    cursor: not-allowed;
+    color: gray;
+}
+footer {
+    position: relative;
+    top: 500px;
+    width: 100%;
+    height: 20%;
+    background-color: #616061;
+    color: #E4F2DB;
+    font-size: 120%;
+    padding: 5px;
+    text-align: center;
+}
+
+    footer a:link {
+        color: #E4F2DB;
+        text-decoration: none;
+    }
+
+    footer a:visited {
+        color: #BBDFA5;
+    }
+
+    footer a:hover {
+        color: white;
+    }
+
+    footer a {
+        margin-left: 35px;
+    }
+#Accessibility {
+    position: fixed;
+    background-color: #e4f2db;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #4A321B;
+    border-radius: 7px;
+    top: 420px;
+}
+
+    #Accessibility a img {
+        width: 35px;
+        height: auto;
+        padding: 2px;
+    }
+
+.notActive {
+    cursor: not-allowed;
+}
+    .notActive > ul:hover {
+        color: dodgerblue;
+    }
+#Tools ul .notActive {
+    text-decoration: underline;
+    text-indent: 5px;
+    color: white;
+    /*list-style-type:disc;*/
+    padding: 3px;
+}
+
+/*:  #BBDFA5 ירוק בהיר מאוד        #6DB441 בהיר ירוק    #528731 כהה בהיר
+:#464644 אפור*/

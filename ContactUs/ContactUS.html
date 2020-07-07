@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="utf-8" />
+    <title>דירה להעביר - צור קשר</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+
+    <!--<link href="styles/reset.css" rel="stylesheet" />-->
+    <link href="styles/myStyle.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.png" />
+
+    <!-- JS -->
+    <script src="jScripts/jquery-1.12.0.min.js"></script>
+
+
+</head>
+<body>
+    <header class="d-flex">
+        <a href="../Homepage/index.html"> <img src="images/logo.png" alt="אתר הבית - דירה להעביר" /></a>
+        <h1 class="d-flex flex-col">
+            דירה להעביר
+            <span>צור קשר</span>
+        </h1>
+        <nav class="d-flex flex-col">
+            <div id="hamburgermenu">
+
+                <input type="checkbox" />
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+                <ul id="menu">
+                    <a href="#"><li>צעירים, רווקים וסטודנטים</li></a>
+                    <a href="#"><li class="notallowed">מבוגרים ובני הגיל השלישי</li></a>
+                    <a href="../Married with kids/family.html"><li>נשואים עם ילדים</li></a>
+                    <a href="#"><li class="notallowed">חד הוריים</li></a>
+                    <a href="../Pets/Pets.html"><li>חיות מחמד</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="sub-container1 d-flex flex-col">
+        <div class="m-bt">
+            <h2 id="title">
+                דירה להעביר
+            </h2>
+        </div>
+
+        <div id="Pirurim">
+            <nav>
+                <ol>
+                    <li><a href="../Homepage/index.html">עמוד בית</a></li>
+                    <li>צור-קשר</li>
+
+                </ol>
+            </nav>
+
+        </div>
+        <div>
+            <h3 id="sub-title">
+                יש לכם שאלה?
+            </h3>
+        </div>
+
+        <div>
+            <span id="subsub-title">
+                צרו איתנו קשר!
+            </span>
+        </div>
+    </div>
+
+    <div id="Accessibility">
+        <a href="#"><img src="images/accessibility icon.png" alt="לאתר הנגיש" /></a>
+    </div>
+    <div role="main" id="container">
+
+        <form id="contact-form" class="d-flex">
+            <input type="hidden" id="email" name="inbar" value="inbarmaman7@gmail.com" />
+
+            <div class="form-control">
+                <label class="form-label" for="fname">
+                    * שם פרטי
+                </label>
+                <input type="text" id="fname" placeholder="" />
+            </div>
+
+            <div class="form-control">
+                <label for="lname">
+                    * שם משפחה
+                </label>
+                <input type="text" id="lname" placeholder="" />
+            </div>
+
+            <div class="mbt20">
+                <label id="gendertitle" for="gender">
+                    * מגדר
+                </label>
+                <input type="radio" id="male" name="gender" /> <span>גבר</span>
+                <input type="radio" id="female" name="gender" /> <span>אישה</span>
+                <input type="radio" id="other" name="gender" /> <span>אחר</span>
+            </div>
+
+            <div class="form-control">
+                <label for="pn">
+                    * טלפון נייד
+                </label>
+                <input type="text" id="pn" placeholder="" />
+            </div>
+
+            <div class="form-control">
+                <label for="email">
+                    * דואר אלקטרוני <br />
+                </label>
+                <input type="text" id="email" placeholder="" />
+            </div>
+
+            <div class="form-control">
+                <label for="progname">
+                    נושא הפנייה
+                </label>
+                <select id="נא לבחור ערך">
+                    <option value="1" selected>נא לבחור ערך</option>
+                    <option value="2">הוספת טיפ אישי</option>
+                    <option value="3">שאלה בנושא מעבר דירה</option>
+                    <option value="4">מצאתי בעיה באתר</option>
+                    <option value="5">סתם רציתי להחמיא</option>
+                </select>
+            </div>
+            <div class="form-control">
+                <label for="tellus">
+                    כתבו לנו
+                </label>
+                <textarea class="fieldbg" id="tellus" placeholder="הקלד כאן" rows="4" cols="50"></textarea>
+            </div>
+
+            <div>
+                <input id="sendbutton" type="submit" value="שלח הודעה" />
+            </div>
+        </form>
+        <div id="bottomsquare">
+            <section>
+                <h5>נשמח  לשמוע  מכם</h5>
+                <h6> זמינים גם במייל</h6>
+                <div class="mail">
+                    <a href="mailto:inbarmaman7@gmail.com">Dira@Gmail.com</a>
+                </div>
+                <div class="mail">
+                    <a href="mailto:inbarmaman7@Gmail.com">Lehaavir@Gmail.com</a>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <a href="../about/about.html">אודות</a>  <a href="../ContactUs/ContactUS.html">צור קשר</a>  <a href="../siteMap/siteMap.html">מפת אתר</a>  <a class="notallowed" href="#">שאלות ותשובות</a>
+        </footer>
+    </div>
+</body>
+</html>
