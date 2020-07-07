@@ -8,6 +8,10 @@
     src: url('../Fonts/trashimclm-bold-webfont.ttf') format('truetype');
 }
 
+html {
+    overflow-x:hidden;
+}
+
 body {
     direction: rtl;
 }
