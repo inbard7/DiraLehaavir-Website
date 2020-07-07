@@ -11,7 +11,9 @@
 
 body {
     direction: rtl;
+    overflow-x: hidden;
 }
+
 header {
     background-color: white;
     width: 100%;
