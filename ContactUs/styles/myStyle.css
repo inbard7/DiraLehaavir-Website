@@ -9,6 +9,10 @@
     /*eot file convertion corrupted file but it should have been here as well*/
 }
 
+html: {
+overflow-x: hidden
+} 
+
 body {
     direction: rtl;
     overflow-x: hidden;
