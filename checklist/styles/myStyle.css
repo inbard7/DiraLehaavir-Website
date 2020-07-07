@@ -7,6 +7,11 @@
     font-family: 'trashimclm-bold-webfont';
     src: url('../Fonts/trashimclm-bold-webfont.ttf') format('truetype');
 }
+
+html {
+    overflow-x:hidden;
+}
+
 .pdfButton {
     width: 140px;
     height: 30px;
